@@ -86,7 +86,7 @@ app.layout = html.Div(children=[
                                         options=[
                                             {'label': str(label), 'value': int(label)} for label in df['Margin'].unique()
                                         ],
-                                        value='1',
+                                        value=1,
                                         labelStyle={'display': 'inline-block'}
                                     ),
                                 ]
@@ -160,9 +160,7 @@ def update_dates_due_to_exchange_select(value):
 
 
 @app.callback(
-    [
-        dash.dependencies.Output('monthly-chart', 'figure'),
-    ],
+    dash.dependencies.Output('monthly-chart', 'figure'),
     (
         dash.dependencies.Input('exchange-select', 'value'),
         dash.dependencies.Input('leverage-select', 'value'),
